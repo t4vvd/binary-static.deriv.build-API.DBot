@@ -25,10 +25,10 @@ const RedirectBanner = (() => {
     };
 
     const handleRedirect = () => {
-        window.location.href = '/move-to-deriv/';
+        window.location.href = 'https://eu.deriv.com/';
     };
     const handleRowRedirect = () => {
-        window.location.href = '/binary-to-deriv/';
+        window.location.href = 'https://deriv.com/';
     };
 
     const loginOnLoad = () => {
