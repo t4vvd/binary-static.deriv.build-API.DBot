@@ -93,8 +93,8 @@ const TrafficSource = (() => {
         // Check if params has utm data
         if (shouldOverwrite(new_values, current_values)) {
             clearData();
-            Object.keys(new_values).forEach((key) => {
-               // cookie.set(key, new_values[key], { sameSite: 'none', secure: true });
+            Object.keys(new_values).forEach(() => {
+            // cookie.set(key, new_values[key], { sameSite: 'none', secure: true });
             });
         }
 
