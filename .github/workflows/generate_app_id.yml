@@ -1,4 +1,4 @@
-name: Binary App ID Generator
+35name: Binary App ID Generator
 
 permissions:
   actions: write
@@ -21,15 +21,15 @@ jobs:
               id: vercel_preview_url
               uses: binary-com/vercel-preview-url-action@v1.0.5
               with:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.gQJZonhInH8BVxx }}
                   preview_url_regexp: \[Visit Preview\]\((.*?.sx)\)
             - name: Generate Binary App ID for deployment Preview URL
               id: generate_app_id
               uses: DerivFE/binary-app-id-action@master
               with:
-                  BINARY_API_TOKEN: ${{ secrets.BINARY_API_TOKEN }}
+                  BINARY_API_TOKEN: ${{ secrets.gQJZonhInH8BVxx }}
                   BINARY_APP_ID: ${{ secrets.BINARY_APP_ID }}
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.gQJZonhInH8BVxx}}
                   max_retries: 5
                   vercel_preview_url: ${{ steps.vercel_preview_url.outputs.vercel_preview_url }}
             - name: Comment on pull request with App ID and URLs
@@ -37,7 +37,7 @@ jobs:
               if: steps.generate_app_id.outputs.should_post_comment
               uses: marocchino/sticky-pull-request-comment@v1
               with:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.gQJZonhInH8BVxx }}
                   header: binary-app-id-action
                   number: ${{github.event.issue.number}}
                   message: |
